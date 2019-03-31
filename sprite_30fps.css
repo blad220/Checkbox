@@ -1,0 +1,711 @@
+/*
+@keyframes play60 {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -4590px 0px;
+  }
+}
+*/
+/*51 * (30 * 3) = 4590*/
+/*51 * 30 * msek = .. */
+/*
+@keyframes play61 {
+
+  0% {
+    background-position: -4590px 0px;
+  }
+      100% {
+    background-position: 0px 0px;
+  }
+}
+*/
+@keyframes noClick {
+    0% {
+        pointer-events: none;
+        cursor: default;
+        border-color: rgba(240, 255, 255, 0);
+        background: rgba(47, 40, 40, 0.98);
+        color: #939393;
+        cursor: default;
+    }
+
+    100% {
+        pointer-events: auto;
+/*        cursor: pointer;*/
+    }
+}
+
+@keyframes noClick1 {
+    0% {
+        pointer-events: none;
+        cursor: default;
+        border-color: rgba(240, 255, 255, 0);
+        background: rgba(47, 40, 40, 0.98);
+        color: #939393;
+        cursor: default;
+    }
+
+    100% {
+        pointer-events: auto;
+/*        cursor: pointer;*/
+    }
+
+}
+
+@keyframes quickCheckOk {
+
+    /*
+    0% {
+    background-position: 0px 0px;
+  }
+*/
+    50% {
+        background-position: -1071px 0px;
+    }
+
+    50.00001% {
+        background-position: -3519px 0px;
+    }
+
+    100% {
+        background-position: -4590px 0px;
+    }
+}
+
+@keyframes quickCheckOff {
+
+    /*
+    0% {
+    background-position: -4590px 0px;
+  }
+*/
+    50% {
+        background-position: -3519px 0px;
+    }
+
+    50.00001% {
+        background-position: -1071px 0px;
+    }
+
+    100% {
+        background-position: 0px 0px;
+    }
+}
+
+@keyframes quickCheckOkLoad {
+    0% {
+        background-position: 0px 0px;
+
+    }
+
+    /*
+    25% {
+    background-position: -1071px 0px;
+    animation-timing-function: 
+      steps(21);
+  }
+        50% {
+    background-position: -3519px 0px;
+  }
+    50.001% {
+    background-position: -1071px 0px;
+  }
+    75% {
+    background-position: -3519px 0px;
+    animation-timing-function: 
+      steps(21);
+  }
+*/
+    100% {
+        /*    background-position: -4590px 0px;    */
+        background-position: -1071px 0px;
+    }
+}
+
+@keyframes quickCheckOkLoad1 {
+    0% {
+        background-position: -1071px 0px;
+
+    }
+
+    100% {
+        background-position: -3519pxpx 0px;
+
+    }
+}
+
+@keyframes quickCheckOkLoad2 {
+    0% {
+        background-position: -3519pxpx 0px;
+
+    }
+
+    100% {
+        background-position: -4590px 0px;
+
+    }
+}
+
+/*21step*/
+@keyframes LongLoadStart {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: -1071px 0px;
+    }
+}
+
+/*48step*/
+@keyframes LongLoadInfinity {
+    0% {
+        background-position: -1071px 0px;
+    }
+
+    100% {
+        background-position: -3519px 0px;
+    }
+}
+
+/*21step*/
+@keyframes LongLoadEnd {
+    0% {
+        background-position: -3519px 0px;
+    }
+
+    100% {
+        background-position: -4590px 0px;
+    }
+}
+
+@keyframes quickCheckOffLoad {
+    0% {
+        background-position: -4590px 0px;
+        animation-timing-function:
+            steps(21);
+
+    }
+
+    25% {
+        background-position: -3519px 0px;
+        animation-timing-function:
+            steps(48);
+    }
+
+    50% {
+        background-position: -1071px 0px;
+        animation-timing-function:
+            steps(48);
+    }
+
+    50.00001% {
+        background-position: -3519px 0px;
+        animation-timing-function:
+            steps(21);
+    }
+
+    100% {
+        background-position: -1071px 0px;
+        animation-timing-function:
+            steps(69);
+    }
+
+    100% {
+        background-position: 0px 0px;
+        animation-timing-function:
+            steps(69);
+
+    }
+}
+body {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.94) 0%,rgba(0,0,0,1) 100%);
+}
+.shapeshifter {
+    animation-duration: 2000ms;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function:
+        steps(60);
+
+    width: 51px;
+    height: 27px;
+    background-repeat: no-repeat;
+}
+
+.shapeshifter.play {
+    animation-name: play60;
+}
+
+.checkanim {
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+    width: 51px;
+    height: 27px;
+    border-radius: 40px;
+/*    cursor: pointer;*/
+    border: 3px solid black;
+    background: red;
+}
+
+.checkanim:before + div::before {
+    background: red;
+}
+
+.checkanim:checked + .checkanim:before {
+    background: green;
+}
+
+.checkanim:checked + chekbutton {
+    background: blue;
+}
+
+.btn_svg {
+    width: 60px;
+}
+
+.chekbutton {
+    padding-left: 6px;
+    padding-right: 6px;
+    width: 51px;
+    height: 27px;
+/*    cursor: pointer;*/
+    border: 3px solid black;
+    border-radius: 40px;
+    background: red;
+}
+
+.newstyle {
+    /*    overflow: hidden;*/
+    width: 40px;
+    height: 40px;
+    position: relative;
+
+}
+
+.newstyle:before {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: blue;
+    background-image: url(sprite_30fps.svg);
+    animation-name: play61;
+    animation-duration: 2000ms;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function:
+        steps(90);
+    background-repeat: no-repeat;
+
+}
+
+.container {
+    width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #3b3b3b;
+    border-radius: 20px;
+    box-shadow: 2px 2px 0px 2px #313131;
+}
+
+.checkbox {
+    width: 500px;
+    margin: 5px auto;
+    /*    position: relative;*/
+    display: table;
+    transition: background 0.5s ease, border 0.5s ease;
+    
+}
+
+.checkbox label:hover {
+    cursor: pointer;
+    background: rgba(23, 6, 6, 0.98);
+    border-color: rgba(219, 226, 226, 0.55);
+
+}
+
+
+.checkbox input[type="checkbox"] {
+    width: auto;
+    opacity: 0.00000001;
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+}
+
+.checkbox label {
+    position: relative;
+    color: #ff2d2d;;
+    background: #221c1c;
+    border-radius: 20px;
+    border: 2px solid;
+    
+    border-color: rgba(219, 226, 226, 0);
+    transition: all 0.45s ease;
+    
+}
+
+.checkbox label:before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    margin: 2px;
+    width: 22px;
+    height: 22px;
+    transition: border 0.45s ease;
+    border-radius: 40px;
+    border: 2px solid #e22a2a;
+    padding-left: 6px;
+    padding-right: 6px;
+    width: 51px;
+    height: 27px;
+}
+
+.checkbox label:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 27px;
+    /*    animation-direction: alternate;*/
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-image: url(sprite_30fps.svg);
+    animation-name: quickCheckOff;
+    background-position: -4590px 0px;
+    animation-duration: 450ms;
+    animation-direction: reverse;
+    /*    animation-iteration-count: infinite;*/
+    animation-timing-function:
+        steps(21);
+    background-repeat: no-repeat;
+    animation-fill-mode: forwards;
+
+}
+
+/*color: #e22a2a;*/
+.checkbox input[type="checkbox"]:checked ~ label {
+    color: #22b573;
+}
+
+.checkbox input[type="checkbox"]:checked ~ label::before {
+    border-color: #22b573;
+}
+
+.checkbox input[type="checkbox"]:checked ~ label::after {
+    /*    animation-direction: normal;*/
+    /*    animation-fill-mode: backwards;*/
+    /*    animation-play-state: running;*/
+    background-position: 0px 0px;
+    animation-name: quickCheckOk;
+
+}
+
+.checkbox label {
+    height: 50px;
+    
+    display: table-cell;
+
+    vertical-align: middle;
+
+    padding: 5px;
+    padding-left: 95px;
+    margin-bottom: 0;
+    font-weight: normal;
+/*    cursor: pointer;*/
+    vertical-align: sub;
+    
+}
+
+.checkbox label span {
+    
+    
+    margin: auto;
+    top: 50%;
+/*    -webkit-transform: translateY(-50%);*/
+/*    transform: translateY(-50%);*/
+/*    cursor: auto;*/
+}
+
+.checkbox.Load label:after {
+    /*    animation: from Load to Off;*/
+    /*    animation-name: play92, play91, play90;*/
+    animation-name: animLoad, animOff;
+
+    animation-duration: 1s, 1s;
+    animation-delay: 0s, 1s;
+    animation-timing-function: steps(48), steps(21);
+
+    /* animation-direction: reverse, reverse; */
+    animation-direction: normal, normal;
+
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards;
+}
+
+.checkbox.Load input[type="checkbox"]:checked ~ label::after {
+    /*    animation: from Load to On;*/
+    /*    animation-name: play92, play91, play90;*/
+    animation-name: animLoad, animOn;
+
+    animation-duration: 1s, 1s;
+    animation-delay: 0s, 1s;
+    animation-timing-function: steps(48), steps(21);
+
+    animation-direction: reverse, reverse;
+    /*    animation-direction: normal, normal;*/
+
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards;
+}
+
+
+
+.fast label:after {
+    background-image: url(sprite_30fpsOkNo.svg);
+    animation-timing-function: steps(90);
+    animation-name: playOkNo;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+}
+
+.checkbox input[type="checkbox"] ~ label {
+    animation: noClick;
+    animation-duration: 2s;
+/*    cursor: pointer;*/
+    user-select: none;
+}
+
+.checkbox input[type="checkbox"]:checked ~ label {
+    animation: noClick1;
+    animation-duration: 2s;
+    user-select: none;
+/*    cursor: pointer;*/
+}
+
+.fast input[type="checkbox"]:checked ~ label::after {
+    animation-name: playOkNo1;
+    animation-timing-function: steps(90);
+    animation-direction: reverse;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+
+}
+
+@keyframes playOkNo {
+    0% {
+        background-position: 0px 0px;
+        pointer-events: none;
+    }
+
+    100% {
+        background-position: -4590px 0px;
+        pointer-events: none;
+    }
+}
+
+@keyframes playOkNo1 {
+    0% {
+        background-position: 0px 0px;
+        pointer-events: none;
+    }
+
+    100% {
+        background-position: -4590px 0px;
+        pointer-events: none;
+    }
+}
+
+/*21step*/
+@keyframes animOn {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: -1071px 0px;
+    }
+}
+@keyframes animOn1 {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: -1071px 0px;
+    }
+}
+/*48step*/
+@keyframes animLoad {
+    0% {
+        background-position: -1071px 0px;
+    }
+
+    100% {
+        background-position: -3519px 0px;
+    }
+}
+@keyframes animLoad1 {
+    0% {
+        background-position: -1071px 0px;
+    }
+
+    100% {
+        background-position: -3519px 0px;
+    }
+}
+/*21step*/
+@keyframes animOff {
+    0% {
+        background-position: -3519px 0px;
+    }
+
+    100% {
+        background-position: -4590px 0px;
+    }
+}
+@keyframes animOff1 {
+    0% {
+        background-position: -3519px 0px;
+    }
+
+    100% {
+        background-position: -4590px 0px;
+    }
+}
+.checkbox.Load1 label:after {
+    /*    animation: from Load to Off;*/
+    /*    animation-name: play92, play91, play90;*/
+    animation-name: animLoad, animOff;
+
+    animation-duration: 0s, 1s;
+    animation-delay: 0s, 0s;
+    animation-timing-function: steps(48), steps(21);
+
+    /* animation-direction: reverse, reverse; */
+    animation-direction: normal, normal;
+
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards;
+}
+
+.checkbox.Load1 input[type="checkbox"]:checked ~ label::after {
+    /*    animation: from Load to On;*/
+    /*    animation-name: play92, play91, play90;*/
+    animation-name: animLoad, animOn;
+
+    animation-duration: 0s, 1s;
+    animation-delay: 0s, 0s;
+    animation-timing-function: steps(48), steps(21);
+
+    animation-direction: reverse, reverse;
+    /*    animation-direction: normal, normal;*/
+
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards;
+}
+.CkeckLoad {
+    cursor: default;
+}
+.checkbox.CkeckLoad label:after {
+    /*    animation-name: play92, play91, play90;*/
+    animation-name: animOn1, animLoad1 !important;
+
+    animation-duration: 1s, 1s;
+    animation-delay: 0s, 1s;
+    animation-timing-function: steps(21), steps(48);
+
+    /* animation-direction: reverse, reverse; */
+    animation-direction: normal, normal;
+    
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards;
+}
+/*
+.checkbox.CkeckLoad label:before {
+    border-color: #0071bc;
+}
+.checkbox.CkeckLoad label {
+    color: #0071bc;
+}
+*/
+/*
+.CkeckLoad:hover {
+    border-color: rgba(240, 255, 255, 0);
+    background: rgba(47, 40, 40, 0.98);
+}
+*/
+.checkbox.CkeckLoad input[type="checkbox"]:checked ~ label::after {
+    /*    animation-name: play92, play91, play90;*/
+    animation-name: animOff1, animLoad1 !important;
+
+    animation-duration: 1s, 1s;
+    animation-delay: 0s, 1s;
+    animation-timing-function: steps(21), steps(48);
+
+    animation-direction: reverse, reverse;
+    /*    animation-direction: normal, normal;*/
+
+    animation-iteration-count: 1, infinite;
+/*    animation-fill-mode: forwards;*/
+}
+/*
+.checkbox.CkeckLoad input[type="checkbox"]:checked ~ label::before {
+    border-color: #0071bc;
+}
+.checkbox.CkeckLoad input[type="checkbox"]:checked ~ label {
+    color: #0071bc;
+}
+*/
+.checkbox input[type="checkbox"]:disabled ~ label::before{
+    border-color: #0071bc;
+}
+.checkbox input[type="checkbox"]:disabled ~ label {
+    color: #939393;
+    cursor: default;
+}
+.checkbox input[type="checkbox"]:disabled ~ label:hover {
+    border-color: rgba(240, 255, 255, 0);
+    background: rgba(47, 40, 40, 0.98);
+}
+.checkbox:focus {
+    cursor: default;
+}
+
+.checkerror {
+/*    display: none;*/
+    opacity: 0;
+    height: 0;
+    color: azure;
+    position: relative;
+    background: rgba(240, 0, 0, 0);
+    transition: all 0.4s;
+    overflow: hidden;
+    clear: both;
+
+        border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.checkerroron label .checkerror {
+    display: block;
+    
+    opacity: 1;
+    height: auto;
+    padding: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    transition: all 0.4s;
+    background: rgba(240, 0, 0, 0.48);
+
+}

@@ -1,0 +1,151 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="sprite_30fps.css" />
+        <link rel="stylesheet" type="text/css" href="transform.css" />
+
+</head>
+
+<body>
+    <div class="container" id="containerCheckbox">
+        <div class="checkbox fast">
+            <input type="checkbox" id="checkbox" name="" value="">
+            <label for="checkbox"><span>Stage 1. Go fast change(Sprite SVG + CSS)</span></label>
+        </div>
+
+        <div class="checkbox fast">
+            <input checked type="checkbox" id="checkbox2" name="" value="">
+            <label for="checkbox2"><span>Stage 2. Go fast change(Sprite SVG + CSS)</span></label>
+        </div>
+
+        <div class="checkbox ">
+            <input type="checkbox" id="checkbox3" name="" value="">
+            <label for="checkbox3"><span>Stage 3. Go with quick preload(Sprite SVG + CSS)</span></label>
+        </div>
+
+        <div class="checkbox ">
+            <input checked type="checkbox" id="checkbox4" name="" value="">
+            <label for="checkbox4"><span>Stage 4. Go with quick preload(Sprite SVG + CSS)</span></label>
+        </div>
+        <div class="checkbox Load1">
+            <input type="checkbox" id="checkbox5" name="" value="" onchange="OnChange(this, 3000, 1)">
+            <label for="checkbox5"><span>Stage 5. Go 3s load(Sprite SVG + CSS + JavaScript)</span></label>
+        </div>
+        <div class="checkbox Load1 ">
+            <input checked type="checkbox" id="checkbox6" name="" value="" onchange="OnChange(this, 1000, 0)">
+            <label for="checkbox6"><span>Stage 6. Go 1s load with Error(Sprite SVG + CSS + JavaScript)</span>
+            <div class="checkerror"></div></label>
+            
+        </div>
+                <div class="checkbox Load1">
+            <input checked type="checkbox" id="checkbox7" name="" value="" onchange="
+this.parentElement.classList.add('CkeckLoad');this.disabled  = true;setTimeout(rem, 4000, this);">
+            <label for="checkbox7"><span>Stage Test. Go(Sprite SVG + CSS + JavaScript)</span></label>
+        </div>
+    </div>
+    <div class="main_all">
+        <div class="tr_left"></div>
+        <div class="tr_main">
+            <div class="tr_all one">
+                <div class="tr_img"></div>
+                <div class="tr_text">There is some interesting text here. Year//... or not/ Proabably not but who knows?</div>
+            </div>
+            <div class="tr_all two"></div>
+            <div class="tr_all three"></div>
+            <div class="tr_all four"></div>
+        
+        </div>
+        <div class="tr_right"></div>
+    </div>
+    <script>
+        function rem(elem) {
+        elem.parentElement.classList.remove("CkeckLoad")
+            elem.disabled  = false;
+        }
+//                css
+//    noncheck {
+//        animation: from Load to Off;
+//    }
+//    check  {
+//        animation: from Load to On;
+//    }
+//    .noncheck.CkeckLoad {
+//        animation: from On to Load;
+//    }
+//    .check.CkeckLoad {
+//        animation: from Off to Load;
+//    }
+
+              
+//        document.getElementsByClassName("checkboxLoad").on
+//        function OnChange(elem) {
+//            elem.classList.add("CkeckLoad");
+//            if (cheked) {
+//                if(sendOn) {elem.classList.Remove("CkeckLoad");}
+//                else {set nonchek}
+//            }
+//            if (!cheked) {
+//                if(sendOff) {elem.classList.Remove("CkeckLoad");}
+//                else {set chek}
+//            }        
+//            
+//            elem.classList.add("CkeckLoad");
+//            if(send(elem.checked)) {elem.classList.Remove("CkeckLoad");}
+//            else {
+//                set elem.checked = !elem.checked
+//                //elem.removeAttribute('checked');
+//            }
+//        }
+//        function send(bool state) {
+//            ajax request..
+//            wait(8000);
+//
+//            if working return true;
+//            if not working return false;
+//            
+//        }
+        //document.getElementById('containerCheckbox').addEventListener('change', function(event){
+        //        
+        //        var elem = event.target;
+        //        
+        //            if(elem.classList.contains("Load") && elem.type == "checkbox") {
+        ////                alert(elem.classList);
+        //                console.log(elem.classList);
+        //                OnChange(elem);
+        //            }   
+        //    });
+        
+        //ALl into class
+        function OnChange(elemchild, time, canLoad) {
+            elemchild.parentElement.classList.remove("checkerroron");
+            elemchild.parentElement.classList.add("CkeckLoad");
+            elemchild.disabled  = true;
+            setTimeout(doThingsForLoad, time, elemchild, canLoad);
+        }
+        function doThingsForLoad(elemchild, canLoad) {
+            //there is something fo doing
+            var finishState = canLoad;
+            var errorMes = "Error 490. Please do some thing";
+            OnChangeEnd(finishState, elemchild, errorMes);
+        }
+        function OnChangeEnd(state, elemchild, errorMes) {
+            if (state) {
+            } 
+            else {
+                elemchild.checked = !elemchild.checked;
+                elemchild.parentElement.classList.add("checkerroron");
+                elemchild.parentElement.getElementsByClassName("checkerror")[0].textContent = errorMes;
+            }
+            elemchild.parentElement.classList.remove("CkeckLoad");
+            setTimeout(RealEnd, 700, elemchild);
+        }
+        function RealEnd(elemchild) {
+            elemchild.removeAttribute("disabled");
+        }
+        
+    </script>
+</body>
+
+</html>
